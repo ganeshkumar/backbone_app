@@ -1,0 +1,17 @@
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: backbone_app_dev
+  username: postgres
+  password: postgres
+  host: localhost
+  pool: 5
+
+test:
+  adapter: postgresql
+  encoding: unicode
+  database: backbone_app_test
+  username: postgres
+  password: postgres
+  host: localhost
+  pool: 5
