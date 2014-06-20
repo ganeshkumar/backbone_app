@@ -227,7 +227,7 @@ Devise.setup do |config|
   config.sign_out_via = :delete
 
   # ==> OmniAuth
-  config.omniauth :facebook, "320824264737832", "24135a0cd74f5d2a4cab569234442c91"
+  config.omniauth :facebook, "320824264737832", "24135a0cd74f5d2a4cab569234442c91" , :strategy_class => OmniAuth::Strategies::Facebook
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or

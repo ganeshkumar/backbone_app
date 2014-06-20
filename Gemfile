@@ -43,6 +43,7 @@ gem "therubyracer"
 gem "less-rails"
 gem "twitter-bootstrap-rails"
 gem 'omniauth-facebook'
+gem "pry", "0.9.12.4"
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
