@@ -4,10 +4,10 @@ window.BackboneApp =
   Views: {}
   Routers: {}
   initialize: ->
-    $(".popup").click (e) ->
-      popupCenter $(this).attr("href"), 600, 600, "facebookAuth"
-      e.stopPropagation()
-      false
+      $(".popup").click (e) ->
+        popupCenter $(this).attr("href"), 600, 600, "facebookAuth"
+        e.stopPropagation()
+        false
 
 $(document).ready ->
   BackboneApp.initialize()

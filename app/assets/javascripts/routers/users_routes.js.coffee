@@ -1,0 +1,1 @@
+class BackboneApp.Routers.Users extends Backbone.Router
