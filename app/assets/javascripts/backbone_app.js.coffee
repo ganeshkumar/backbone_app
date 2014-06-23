@@ -4,10 +4,16 @@ window.BackboneApp =
   Views: {}
   Routers: {}
   initialize: ->
-      $(".popup").click (e) ->
-        popupCenter $(this).attr("href"), 600, 600, "facebookAuth"
-        e.stopPropagation()
-        false
+    $(".popup").click (e) ->
+      popupCenter $(this).attr("href"), 600, 600, "facebookAuth"
+      e.stopPropagation()
+      false
+  change_password: (sign_in_count, user)->
+    if sign_in_count is "1"
+      user_model = new BackboneApp.Models.User(user)
+      new BackboneApp.Views.ChangePassword({ el: $("#ChangePassword") })
+    else
+      alert "need to implement."
 
 $(document).ready ->
   BackboneApp.initialize()
@@ -21,3 +27,4 @@ popupCenter = (url, width, height, name) ->
 $.ajaxSetup beforeSend: (xhr, settings) ->
   xhr.setRequestHeader "X-CSRFToken", $('meta[name="csrf-token"]').attr('content')
   return
+
