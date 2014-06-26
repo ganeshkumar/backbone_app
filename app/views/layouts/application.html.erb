@@ -38,18 +38,23 @@
     <!-- Content start -->
     <div class="container">
       <div id="ChangePassword"></div>
-      <% if current_user.blank? %>
-        <input type="text" placeholder="Email address" class="input-block-level">
-        <input type="password" placeholder="Password" class="input-block-level">
-        <label class="checkbox">
-          <input type="checkbox" value="remember-me"> Remember me
-        </label>
-        <button type="submit" class="btn btn-medium btn-primary">Sign in</button>
-        <%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook), class: "popup btn btn-medium btn-primary" %>
-    </div>
-          <% else %>
-      <%= link_to "Log out", destroy_user_session_path, :method => :delete %>
+        <div id ="login">
+          <% if current_user.blank? %>
+            <input type="text" placeholder="Email address" class="input-block-level">
+            <input type="password" placeholder="Password" class="input-block-level">
+            <label class="checkbox">
+              <input type="checkbox" value="remember-me"> Remember me
+            </label>
+            <button type="submit" class="btn btn-medium btn-primary">Sign in</button>
+            <%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook), class: "popup btn btn-medium btn-primary" %>
+              <%else %>
+
+          <script type="text/javascript">
+              BackboneApp.change_password("<%= current_user.sign_in_count %>", <%=current_user.to_json.html_safe%>)
+          </script>
           <% end %>
+        </div>
+    </div>
     <!-- Content end -->
     <%= content_for :javascript %>
   </body>

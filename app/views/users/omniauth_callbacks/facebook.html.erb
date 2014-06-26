@@ -5,6 +5,6 @@
         window.close();
     }
 
-    window.opener.BackboneApp.change_password("<%= current_user.sign_in_count %>", "<%= current_user.to_json%>")
+    window.opener.BackboneApp.change_password("<%= current_user.sign_in_count %>", <%=  current_user.to_json.html_safe%>)
 </script>
 <% end %>

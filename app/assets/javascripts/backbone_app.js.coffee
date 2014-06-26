@@ -10,8 +10,9 @@ window.BackboneApp =
       false
   change_password: (sign_in_count, user)->
     if sign_in_count is "1"
+      $("#login").remove()
       user_model = new BackboneApp.Models.User(user)
-      new BackboneApp.Views.ChangePassword({ el: $("#ChangePassword") })
+      new BackboneApp.Views.ChangePassword({ el: $("#ChangePassword"), model: user_model })
     else
       alert "need to implement."
 
